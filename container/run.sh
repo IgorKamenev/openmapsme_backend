@@ -52,8 +52,8 @@ docker run \
 -v $MYSQL_LOG_PATH:/var/log/mysql \
 -v $PHP_LOG_PATH:/var/log/php \
 -v $NGINX_LOG_PATH:/var/log/nginx \
--v NGINX_OPENMAPS_LOG_PATH:/var/log/nginx/om \
--v SUPERVISOR_LOG_PATH:/var/log/supervisor \
+-v $NGINX_OPENMAPS_LOG_PATH:/var/log/nginx/om \
+-v $SUPERVISOR_LOG_PATH:/var/log/supervisor \
 -v $MYSQL_DATA_DIR:/var/lib/mysql \
 -v $APPLICATION_PATH/container/etc/mysql:/etc/mysql \
 -v /tmp:/var/run/mysqld \
@@ -62,11 +62,13 @@ docker run \
 --shm-size=8g \
 --env TZ=UTC \
 -ti -d \
---sysctl net.ipv4.tcp_fin_timeout=3 \
---sysctl net.ipv4.ip_local_port_range="10000 61000" \
---sysctl net.ipv4.tcp_tw_reuse=0 \
---sysctl net.ipv4.tcp_max_tw_buckets=100 \
---sysctl net.core.somaxconn=1024 \
 --name $CONTAINER_NAME \
 --hostname $CONTAINER_NAME \
 mrjamesbond/openmaps /application/container/launchScripts/start.sh
+
+
+#--sysctl net.ipv4.tcp_fin_timeout=3 \
+#--sysctl net.ipv4.ip_local_port_range="10000 61000" \
+#--sysctl net.ipv4.tcp_tw_reuse=0 \
+#--sysctl net.ipv4.tcp_max_tw_buckets=100 \
+#--sysctl net.core.somaxconn=1024 \

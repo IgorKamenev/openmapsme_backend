@@ -1,3 +1,3 @@
 #!/bin/bash
 
-./run.sh /Users/mrbond/Sources/ratings/backend
+./run.sh /Users/mrbond/Sources/openmaps.me/backend
