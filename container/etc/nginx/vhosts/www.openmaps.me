@@ -1,15 +1,15 @@
 server{
 
-    #listen 443 ssl;
+    listen 443 ssl;
     listen 80;
 
     fastcgi_intercept_errors on;
 
-    #ssl_certificate      /etc/letsencrypt/live/www.ratingduck.com/fullchain.pem;
-    #ssl_certificate_key  /etc/letsencrypt/live/www.ratingduck.com/privkey.pem;
-    #ssl_protocols TLSv1 TLSv1.1 TLSv1.2;
-    #ssl_ciphers  "HIGH:!RC4:!aNULL:!MD5:!kEDH";
-    #add_header Strict-Transport-Security 'max-age=604800';
+    ssl_certificate      /etc/letsencrypt/live/www.openmaps.me/fullchain.pem;
+    ssl_certificate_key  /etc/letsencrypt/live/www.openmaps.me/privkey.pem;
+    ssl_protocols TLSv1 TLSv1.1 TLSv1.2;
+    ssl_ciphers  "HIGH:!RC4:!aNULL:!MD5:!kEDH";
+    add_header Strict-Transport-Security 'max-age=604800';
 
     return 301 $scheme://openmaps.me$request_uri;
 }
