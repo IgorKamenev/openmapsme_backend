@@ -52,7 +52,7 @@ docker run \
 -v $MYSQL_LOG_PATH:/var/log/mysql \
 -v $PHP_LOG_PATH:/var/log/php \
 -v $NGINX_LOG_PATH:/var/log/nginx \
--v /application/container/logs/nginx/openmaps:/var/log/nginx/openmaps \
+-v NGINX_OPENMAPS_LOG_PATH:/var/log/nginx/openmaps \
 -v SUPERVISOR_LOG_PATH:/var/log/supervisor \
 -v $MYSQL_DATA_DIR:/var/lib/mysql \
 -v $APPLICATION_PATH/container/etc/mysql:/etc/mysql \
