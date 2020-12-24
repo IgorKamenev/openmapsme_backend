@@ -19,7 +19,7 @@ MYSQL_DATA_DIR=$APPLICATION_PATH/container/mysql_data
 REDIS_DATA_DIR=$APPLICATION_PATH/container/redis_data
 
 NGINX_LOG_PATH=$APPLICATION_PATH/container/logs/nginx
-NGINX_OPENMAPS_LOG_PATH=$APPLICATION_PATH/container/logs/nginx/snowduck
+NGINX_OPENMAPS_LOG_PATH=$APPLICATION_PATH/container/logs/nginx/openmaps
 REDIS_LOG_PATH=$APPLICATION_PATH/container/logs/redis
 MYSQL_LOG_PATH=$APPLICATION_PATH/container/logs/mysql
 SUPERVISOR_LOG_PATH=$APPLICATION_PATH/container/logs/supervisor
