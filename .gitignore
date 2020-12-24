@@ -1,0 +1,4 @@
+container/logs
+container/mysql_data
+container/redis_data
+.DS_Store
