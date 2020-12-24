@@ -19,7 +19,7 @@ MYSQL_DATA_DIR=$APPLICATION_PATH/container/mysql_data
 REDIS_DATA_DIR=$APPLICATION_PATH/container/redis_data
 
 NGINX_LOG_PATH=$APPLICATION_PATH/container/logs/nginx
-NGINX_OPENMAPS_LOG_PATH=$APPLICATION_PATH/container/logs/nginx/openmaps
+NGINX_OPENMAPS_LOG_PATH=$APPLICATION_PATH/container/logs/nginx/om
 REDIS_LOG_PATH=$APPLICATION_PATH/container/logs/redis
 MYSQL_LOG_PATH=$APPLICATION_PATH/container/logs/mysql
 SUPERVISOR_LOG_PATH=$APPLICATION_PATH/container/logs/supervisor
@@ -52,7 +52,7 @@ docker run \
 -v $MYSQL_LOG_PATH:/var/log/mysql \
 -v $PHP_LOG_PATH:/var/log/php \
 -v $NGINX_LOG_PATH:/var/log/nginx \
--v NGINX_OPENMAPS_LOG_PATH:/var/log/nginx/openmaps \
+-v NGINX_OPENMAPS_LOG_PATH:/var/log/nginx/om \
 -v SUPERVISOR_LOG_PATH:/var/log/supervisor \
 -v $MYSQL_DATA_DIR:/var/lib/mysql \
 -v $APPLICATION_PATH/container/etc/mysql:/etc/mysql \
