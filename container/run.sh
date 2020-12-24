@@ -69,4 +69,4 @@ docker run \
 --sysctl net.core.somaxconn=1024 \
 --name $CONTAINER_NAME \
 --hostname $CONTAINER_NAME \
-mrjamesbond/ratings_backend2 /application/container/launchScripts/start.sh
+mrjamesbond/openmaps /application/container/launchScripts/start.sh
