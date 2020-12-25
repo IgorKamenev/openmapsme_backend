@@ -1,13 +1,13 @@
 server{
 
-    listen 443 default_server ssl;
+    listen 443 ssl default_server;
     listen 80;
 
-    server_name openmaps.me;
+    server_name snowduck.app snowduck.loc;
     root /application/htdocs;
 
-    access_log /var/log/nginx/om/access.log;
-    error_log  /var/log/nginx/om/error.log;
+    access_log /var/log/nginx/snowduck/access.log;
+    error_log  /var/log/nginx/snowduck/error.log;
 
     fastcgi_intercept_errors on;
 
@@ -39,6 +39,32 @@ server{
         fastcgi_busy_buffers_size 1024k;
         fastcgi_temp_file_write_size 1024k;
         fastcgi_param HTTPS off;
+    }
+
+
+    location /adm/ {
+        autoindex off;
+        try_files $uri $uri/ @router2;
+        index index.html index.php;
+        error_page 403 = @router2;
+        error_page 404 = @router2;
+    }
+
+    location @router2 {
+        rewrite ^(.*)$ /adm/index.php?$1;
+    }
+
+
+    location /api/ {
+        autoindex off;
+        try_files $uri $uri/ @router3;
+        index index.html index.php;
+        error_page 403 = @router2;
+        error_page 404 = @router2;
+    }
+
+    location @router3 {
+        rewrite ^(.*)$ /api/index.php?$1;
     }
 
     location = /stat {
