@@ -3,11 +3,11 @@ server{
     listen 443 ssl default_server;
     listen 80;
 
-    server_name snowduck.app snowduck.loc;
+    server_name openmaps.me openmaps.loc;
     root /application/htdocs;
 
-    access_log /var/log/nginx/snowduck/access.log;
-    error_log  /var/log/nginx/snowduck/error.log;
+    access_log /var/log/nginx/om/access.log;
+    error_log  /var/log/nginx/om/error.log;
 
     fastcgi_intercept_errors on;
 
